@@ -8,12 +8,12 @@ int main() {
 	    int msb= __builtin_clz(x);// gives us number of leading zeroes
 	    msb=32-msb;// what we have now is Most significant bit
 	    msb--;
-	    int a= 1<<msb, b=0;// set most significant bit in 'a' which makes it bigger than b in all cases
+	    int b= 1<<msb, a=0;// set most significant bit in 'b' which makes it bigger than 'a' in all cases
 	    msb--;
 	    for(int i=msb; i>=0;i--){
-	        if(x&(1<<i)) b|=(1<<i);// set the remaining bits in 'b' 
+	        if(x&(1<<i)) a|=(1<<i);// set the remaining bits in 'b' 
 	    }
-	    cout<<b<<" "<<a<<endl;
+	    cout<<a<<" "<<b<<endl;
 	}
 
 }
